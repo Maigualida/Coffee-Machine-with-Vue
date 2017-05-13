@@ -6,6 +6,8 @@ let app = new Vue({
 		butType: false,
 		butSize: false,
 		butExtra: false,
+		priceC: 0,
+		priceE: 0,
 		total: 0,
 		picked: {
 			type: '',
@@ -45,7 +47,7 @@ let app = new Vue({
 					for (item of this.coffee) {
 						console.log(item);
 						if (item.title == this.picked.type) {
-							price = item.priceS;
+							this.priceC = item.priceS;
 							console.log(" small")
 						}
 					} // end for s
@@ -54,7 +56,7 @@ let app = new Vue({
 					for (item of this.coffee) {
 						console.log(item);
 						if (item.title == this.picked.type) {
-							price = item.priceM;
+							this.priceC = item.priceM;
 							console.log("medium");
 						}
 					} // end for M
@@ -63,19 +65,21 @@ let app = new Vue({
 					for (item of this.coffee) {
 						console.log(item);
 						if (item.title == this.picked.type) {
-							price = item.priceL;
+							this.priceC = item.priceL;
 							console.log(" L");
 						}
 					} // end for L
 				}// end if L
 			}// end else 
 			if (this.picked.extra === '') {
+				console.log("no extra")
 			}
 			else {
+				console.log("extra")
 				if (this.picked.size === 'Small') {
 					for (item of this.extra) {
-						if (item.title == this.picked.type) {
-							price = price + item.priceS;
+						if (item.name == this.picked.extra) {
+							this.priceE = item.priceS;
 							console.log("extra,  small", price)
 						}
 					} // end for s
@@ -83,8 +87,8 @@ let app = new Vue({
 				if (this.picked.size === 'Medium') {
 					for (item of this.extra) {
 						console.log(item);
-						if (item.title == this.picked.type) {
-							price = price + item.priceM;
+						if (item.name == this.picked.extra) {
+							this.priceE = item.priceM;
 							console.log("medium extra ", price);
 						}
 					} // end for M
@@ -92,8 +96,8 @@ let app = new Vue({
 				if (this.picked.size === 'Large') {
 					for (item of this.extra) {
 						console.log(item);
-						if (item.title == this.picked.type) {
-							price = price.item.priceL;
+						if (item.name == this.picked.extra) {
+							this.priceE = item.priceL;
 							console.log("L extra", price);
 						}
 					} // end for M
@@ -101,12 +105,17 @@ let app = new Vue({
 
 			}// end else extra
 
-			this.total = price;
+			this.total = this.priceC + this.priceE;
 
-		} // end funtion
+		}, // end funtion
+		change: function () {
+			this.picked.type = '';
+			this.picked.size = '';
+			this.picked.extra = '';
+		}
 
 
-	}
+	}// end methods
 
 
 }) // fin app
