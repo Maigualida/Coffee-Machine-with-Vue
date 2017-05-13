@@ -1,0 +1,20 @@
+.menu{
+	
+}
+
+.active{
+	display: inline;
+}
+
+.not-active{
+	display: none;
+}
+
+#cv{
+	background-color: #BC4344;
+	height: 600px;
+	width: 600px;
+	color: white;
+	font-size: 20em;
+	text-align: center;
+}

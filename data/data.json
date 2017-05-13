@@ -1,0 +1,59 @@
+{
+  "coffee": [
+    {
+      "id": 1,
+      "title": "Moka",
+      "priceS": 1.5,
+      "priceM": 2.0,
+      "priceL": 2.5
+    },
+    {
+      "id": 2,
+      "title": "Espresso",
+      "priceS": 1.5,
+      "priceM": 2.0,
+      "priceL": 2.5
+    },
+    {
+      "id": 3,
+      "title": "Late",
+      "priceS": 1.5,
+      "priceM": 2.0,
+      "priceL": 2.5
+    },
+    {
+      "id": 4,
+      "title": "Capuccino",
+      "priceS": 1.5,
+      "priceM": 2.0,
+      "priceL": 2.5
+    },
+    {
+      "id": 5,
+      "title": "Affogato",
+      "priceS": 0.5,
+      "priceM": 0.6,
+      "priceL": 0.7
+    }
+  ],
+  "extra": [
+    {
+      "name": "Milk",
+      "priceS": 0.5,
+      "priceM": 0.6,
+      "priceL": 0.7
+    },
+    {
+      "name": "Cream",
+      "priceS": 0.6,
+      "priceM": 0.7,
+      "priceL": 0.8
+    },
+    {
+      "name": "Sugar",
+      "priceS": 0.3,
+      "priceM": 0.4,
+      "priceL": 0.5
+    }
+  ]
+}

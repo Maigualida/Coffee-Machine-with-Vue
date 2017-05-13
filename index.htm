@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="src/style.css" rel="stylesheet">
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+	<div id="app">
+
+		<nav>
+			<div class="nav-wrapper  grey darken-4">
+				<a class="brand-logo">
+					We <span><i class="material-icons">favorite</i></span> Coffee
+				</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<!--<li><a href="badges.html">Components</a></li>
+					<li><a href="collapsible.html">JavaScript</a></li>-->
+				</ul>
+			</div>
+		</nav>
+		<div class="row">
+			<div class="col s4">
+				<div id="coffeeType" class="active">
+					<h4>Coffee Type</h4>
+
+					<form>
+						<div v-for='item in coffee'>
+							<p>
+								<input name="groupe" type="radio" v-model="picked.type" :id="item.title" :value="item.title" @click="pickedT" />
+								<label :for="item.title">{{item.title}}</label>
+							</p>
+						</div>
+					</form>
+				</div>
+
+				<div id="coffeeSize">
+					<h4>Size</h4>
+					<form action="#">
+						<p>
+							<input name="group1" type="radio" id="test1" v-model="picked.size" value="Small" />
+							<label for="test1">Small</label>
+						</p>
+						<p>
+							<input name="group1" type="radio" id="test2" v-model="picked.size" value="Medium" />
+							<label for="test2">Medium</label>
+						</p>
+						<p>
+							<input name="group1" type="radio" id="test3" v-model="picked.size" value="Large" />
+							<label for="test3">Large</label>
+						</p>
+					</form>
+				</div>
+
+				<div id="extra" class="not-active">
+					<h4>Extra</h4>
+
+					<form>
+						<div v-for='item in extra'>
+							<p>
+								<input name="groupe" type="radio" v-model="picked" :id="item.name" />
+								<label :for="item.name">{{item.name}}</label>
+							</p>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!--div left-->
+			<div class="col s4">
+
+				<div class="row">
+					<div class="col s12">
+						<div class="card blue-grey darken-1">
+							<div class="card-content white-text">
+								<span class="card-title">Command</span>
+								<p>Coffee: {{picked.type}}</p>
+								<p>Size: {{picked.size}}</p>
+								<p>Extra: {{picked.extra}}</p>
+							</div>
+							<div class="card-action">
+								<a href="#" @click="">Change order</a>
+								<a href="#" @click="payment">Pay</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="col s4">
+
+				<div class="row">
+					<div class="col s12">
+						<div class="card blue-grey darken-1">
+							<div class="card-content white-text">
+								<span class="card-title">Total </span>
+							</div>
+							<div class="card-action">
+								<a href="#">This is a link</a>
+								<a href="#">This is a link</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		<!--<div id="cv"><i class="fa fa-language" aria-hidden="true"></i></div>-->
+
+	</div>
+
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://unpkg.com/vue@2.2.6"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/vue.resource/1.3.1/vue-resource.min.js"></script>
+	<script src="main.js"></script>
+</body>
+
+</html>
