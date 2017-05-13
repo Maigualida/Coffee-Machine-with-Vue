@@ -60,13 +60,13 @@
 					</form>
 				</div>
 
-				<div id="extra" class="not-active">
+				<div id="extra">
 					<h4>Extra</h4>
 
 					<form>
 						<div v-for='item in extra'>
 							<p>
-								<input name="groupe" type="radio" v-model="picked" :id="item.name" />
+								<input name="groupe" type="radio" v-model="picked.extra" :id="item.name" :value="item.name" />
 								<label :for="item.name">{{item.name}}</label>
 							</p>
 						</div>
@@ -102,10 +102,12 @@
 						<div class="card blue-grey darken-1">
 							<div class="card-content white-text">
 								<span class="card-title">Total </span>
+								<p>{{total}}
+									<p>
 							</div>
 							<div class="card-action">
-								<a href="#">This is a link</a>
-								<a href="#">This is a link</a>
+								<a href="#"></a>
+								<a href="#"></a>
 							</div>
 						</div>
 					</div>
